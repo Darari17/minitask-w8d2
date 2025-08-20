@@ -47,4 +47,5 @@ func (f *Fiktif) Pay(ammount []int) (string, error) {
 	}
 	f.Lists = append(f.Lists, total)
 	return fmt.Sprintf("Pembayaran %d berhasil\n", total), nil
+
 }
