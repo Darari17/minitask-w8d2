@@ -42,12 +42,31 @@ func main() {
 	pembayaran3 := []int{-5000, -1000}
 
 	bank := task3.Bank{Name: "BRI"}
-	bank.Pay(pembayaran1)
-	bank.Pay(pembayaran2)
+	res, err := bank.Pay(pembayaran1)
+	if err != nil {
+		fmt.Println(err.Error())
+	}
+	fmt.Println(res)
+
+	res, err = bank.Pay(pembayaran2)
+	if err != nil {
+		fmt.Println(err.Error())
+	}
+	fmt.Println(res)
 
 	online := task3.Online{Name: "Dana"}
-	online.Pay(pembayaran1)
+	res, err = online.Pay(pembayaran1)
+	if err != nil {
+		fmt.Println(err.Error())
+	}
+	fmt.Println(res)
+
 	online.Pay(pembayaran2)
+	res, err = online.Pay(pembayaran2)
+	if err != nil {
+		fmt.Println(err.Error())
+	}
+	fmt.Println(res)
 
 	fiktif := &task3.Fiktif{}
 	result, err := fiktif.Pay(pembayaran1)
